@@ -788,34 +788,26 @@ private:
     float breadth;
 
 public:
-    // Constructor to initialize length and breadth
     Rectangle(float l, float b) : length(l), breadth(b) {}
-
-    // Method to calculate the area of the rectangle
     float area() const
     {
         return length * breadth;
     }
 
-    // Overload == operator to compare if two rectangles have equal areas
     bool operator==(const Rectangle& r)
     {
         return this->area() == r.area();
     }
-
-    // Overload > operator to check if one rectangle's area is larger than the other
     bool operator>(const Rectangle& r)
     {
         return this->area() > r.area();
     }
 
-    // Overload < operator to check if one rectangle's area is smaller than the other
+
     bool operator<(const Rectangle& r)
     {
         return this->area() < r.area();
     }
-
-    // Method to display the area of the rectangle
     void displayArea()
     {
         cout << "Area: " << area() << endl;
@@ -824,23 +816,20 @@ public:
 
 int main()
 {
-    // Create three Rectangle objects
     Rectangle rect1(4, 5);
     Rectangle rect2(2, 10);
     Rectangle rect3(3, 6);
 
-    // Display the areas of the rectangles
     rect1.displayArea();
     rect2.displayArea();
     rect3.displayArea();
 
-    // Compare rect1 and rect2 using the overloaded == operator
+   
     if (rect1 == rect2)
         cout << "rect1 and rect2 have equal areas." << endl;
     else
         cout << "rect1 and rect2 do not have equal areas." << endl;
 
-    // Compare rect1 and rect3 using the overloaded > and < operators
     if (rect1 > rect3)
         cout << "rect1 is larger than rect3." << endl;
     else if (rect1 < rect3)
